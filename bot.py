@@ -386,3 +386,15 @@ async def on_shutdown(dp):
 if __name__ == '__main__':
     executor.start_polling(dp, on_startup=on_startup, on_shutdown=on_shutdown)
 ```
+import asyncio
+from aiogram import Bot, Dispatcher
+
+async def main():
+    bot = Bot(token=BOT_TOKEN)
+    dp = Dispatcher()
+    # твои хэндлеры тут...
+    await dp.start_polling(bot)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+
